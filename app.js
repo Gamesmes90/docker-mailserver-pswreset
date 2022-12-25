@@ -86,11 +86,11 @@ app.post('/reset', urlencodedParser, (req, res) => {
     exec("../setup.sh email update " + req.body.email + " " + req.body.password, function(err,stdout,stderr){
         console.log(stderr);
         if(stderr != ""){
-            res.status(400).send("<h4 style='text-align:center; font-weight: bold; color: #e8e6e3;'>Error while changing password<br><button class='btn btn-primary' ' onClick='window.location.reload();'>Refresh Page</button></h4>");
+            res.status(400).send("<h4 style='text-align:center; font-weight: bold; color: black;'>Error while changing password<br><button class='btn btn-primary' ' onClick='window.location.reload();'>Refresh Page</button></h4>");
             console.log('[' + new Date().toUTCString() + '] '+"Error while changing password of user", req.body.email);
         }
         else{
-            res.status(200).send("<h4 style='text-align:center; font-weight: bold; color: #e8e6e3;'>Your password has been changed successfully</h4>");
+            res.status(200).send("<h4 style='text-align:center; font-weight: bold; color: black;'>Your password has been changed successfully</h4>");
             console.log('[' + new Date().toUTCString() + '] '+"Password of user", req.body.email, "changed.");
         }
     });
