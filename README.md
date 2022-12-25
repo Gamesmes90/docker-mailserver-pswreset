@@ -29,6 +29,14 @@ Make sure you have node 18 (nvm recommended)
 nvm install 18
 nvm use 18
 ```
+run npm
+```
+npm install
+```
+Get pkg if you don't have it
+```
+npm install pkg -g
+```
 Then run pkg
 ```
 pkg .
