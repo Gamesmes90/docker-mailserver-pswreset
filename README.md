@@ -41,3 +41,5 @@ Then run pkg
 ```
 pkg .
 ```
+
+By default, this program must run in the same directory as the setup.sh script
