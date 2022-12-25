@@ -48,3 +48,15 @@ npm run build-linux-arm64
 ```
 
 By default, this program must run in a subdirectory of the folder of setup.sh and in the same directory as .env
+
+## Nginx proxy
+Example nginx proxy config
+```
+    location /folder_name/ {
+        proxy_pass http://localhost:3005/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;         
+    }
+```

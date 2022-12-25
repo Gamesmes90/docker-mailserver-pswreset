@@ -19,7 +19,7 @@ function check()
                   document.body.innerHTML = data.responseText;
                 },
                 success: function(data){
-                  document.body.innerHTML = data.responseText;
+                  document.body.innerHTML = data;
                 }
             });
     });
