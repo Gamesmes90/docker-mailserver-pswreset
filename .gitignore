@@ -3,3 +3,4 @@ docker-mailserver-pswreset
 docker-mailserver-pswreset-arm64
 docker-mailserver-pswreset-x64
 public/utils.js
+pswreset

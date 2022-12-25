@@ -16,8 +16,10 @@ function check()
                 data: { password: x, email:  url.searchParams.get("email").substring(0,url.searchParams.get("email").length-1)},
                 dataType: "html",
                 error: function(data){
-                    document.body.innerHTML = data.responseText;
-                    console.log(data);
+                  document.body.innerHTML = data.responseText;
+                },
+                success: function(data){
+                  document.body.innerHTML = data.responseText;
                 }
             });
     });

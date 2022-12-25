@@ -7,9 +7,9 @@
   "scripts": {
     "start": "node app.js",
     "obfuscate": "node obfuscator.js",
-    "build-linux-arm64": "npm run obfuscate && pkg . -t node18-linux-arm64",
-    "build-linux-x64": "npm run obfuscate && pkg . -t node18-linux-x64",
-    "clean": "rm public/utils.js"
+    "build-linux-arm64": "npm run obfuscate && pkg . -t node18-linux-arm64 && mkdir pswreset && mv docker-mailserver-pswreset pswreset && cp .env pswreset",
+    "build-linux-x64": "npm run obfuscate && pkg . -t node18-linux-x64 && mkdir pswreset && mv docker-mailserver-pswreset pswreset && cp .env pswreset",
+    "clean": "rm public/utils.js && rm -rf pswreset"
   },
   "keywords": [
     "password"

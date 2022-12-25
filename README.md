@@ -47,4 +47,4 @@ npm run build-linux-x64
 npm run build-linux-arm64
 ```
 
-By default, this program must run in the same directory as the setup.sh script and the .env file
+By default, this program must run in a subdirectory of the folder of setup.sh and in the same directory as .env

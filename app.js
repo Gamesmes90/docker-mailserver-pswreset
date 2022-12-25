@@ -83,7 +83,7 @@ app.get('/reset', (req, res) => {
 app.post('/reset', urlencodedParser, (req, res) => {
     console.log(req.body);
     console.log('[' + new Date().toUTCString() + '] '+"Changing password of user", req.body.email);
-    exec("./setup.sh email update " + req.body.email + " " + req.body.password, function(err,stdout,stderr){
+    exec("../setup.sh email update " + req.body.email + " " + req.body.password, function(err,stdout,stderr){
         console.log(stderr);
         if(stderr != ""){
             res.status(400).send("<h4 style='text-align:center; font-weight: bold; color: #e8e6e3;'>Error while changing password<br><button class='btn btn-primary' ' onClick='window.location.reload();'>Refresh Page</button></h4>");
