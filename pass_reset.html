@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon-32x32.png">
+    <title>Docker-mailserver Password Reset</title>
+    <!-- Google Fonts -->
+    <link type="text/css" href="./css/fonts.css" rel="stylesheet" />
+    <!-- MDB -->
+    <link type="text/css" href="./css/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function empty()
+        {
+          var x;
+          x = document.getElementById("email").value;
+          if (x == "") {
+            alert("Data missing");
+            return false;
+          };
+        }
+    </script>
+    <style>
+        .body{
+            font-family: "Roboto", sans-serif;
+        }
+        .container{
+            box-shadow: 0px 0px 8px #ddd
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container p-4 mt-5" style="max-width:500px">
+        <h4 class="text-center mb-4">Reset docker-mailserver password</h4>
+        <form method="post" action="/pass_reset" style="max-width:500px;">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary" onclick="return empty()">Send Reset Link</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

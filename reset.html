@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./favicon-32x32.png">
+    <script src="./jquery.min.js"></script>
+    <title>Enter New Password</title>
+    <!-- Google Fonts -->
+    <link type="text/css" href="./css/fonts.css" rel="stylesheet" />
+    <!-- MDB -->
+    <link type="text/css" href="./css/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function empty()
+        {
+          var x;
+          x = document.getElementById("password").value;
+          if (x == "") {
+            alert("Data missing");
+            return false;
+          };
+          var url = new URL(window.location.href);
+          $.ajax({
+            url: '/reset',
+            type: 'POST',
+            data: { password:x, email:  url.searchParams.get("email").substring(0,url.searchParams.get("email").length-1)}
+            });
+        }
+    </script>
+    <script>
+        function myFunction() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+        }
+    </script>
+    <style>
+        .body{
+            font-family: "Roboto", sans-serif;
+        }
+        .container{
+            box-shadow: 0px 0px 8px #ddd
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container p-4 mt-5" style="max-width:500px">
+        <h4 class="text-center mb-4">ENTER NEW PASSWORD</h4>
+        <form id="form" method="post" action="/reset" style="max-width:500px;">
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="emailHelp" name="password" placeholder="Enter password">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success" onclick="return empty()">Reset</button>
+            </div>
+        </form>
+        <input type="checkbox" class="form-check-input" onclick="myFunction()">Show Password
+    </section>
+</body>
+
+</html>
