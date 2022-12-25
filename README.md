@@ -41,5 +41,10 @@ Then run pkg
 ```
 pkg .
 ```
+or use npm with build-linux-arm64 or build-linux-x64
+```
+npm run build-linux-x64
+npm run build-linux-arm64
+```
 
 By default, this program must run in the same directory as the setup.sh script and the .env file
