@@ -4,7 +4,6 @@ const { exec } = require("child_process");
 const nodemailer = require("nodemailer");
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
-const url = require('url');
 const app = express();
 // get config vars
 dotenv.config();
