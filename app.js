@@ -81,7 +81,6 @@ app.get('/reset', (req, res) => {
 //This executes the ./setup.sh script to change password of given user
 //./setup.sh email update [email] [password]
 app.post('/reset', urlencodedParser, (req, res) => {
-    console.log(req.body);
     console.log('[' + new Date().toUTCString() + '] '+"Changing password of user", req.body.email);
     exec("../setup.sh email update " + req.body.email + " " + req.body.password, function(err,stdout,stderr){
         console.log(stderr);
