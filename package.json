@@ -1,6 +1,6 @@
 {
   "name": "docker-mailserver-pswreset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Password reset for docker-mailserver",
   "main": "app.js",
   "bin": "app.js",
@@ -15,15 +15,22 @@
   "dependencies": {
     "body-parser": "^1.20.1",
     "child_process": "^1.0.2",
-    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "nodemailer": "^6.8.0"
   },
   "pkg": {
-    "scripts": ["app.js", "public/jquery.min.js"],
-    "assets": ["public/**/*", "pass_reset.html", "reset.html", ".env", "public/favicon-32x32x.png"],
+    "scripts": [
+      "app.js",
+      "public/jquery.min.js"
+    ],
+    "assets": [
+      "public/**/*",
+      "pass_reset.html",
+      "reset.html",
+      "public/favicon-32x32x.png"
+    ],
     "targets": [
       "node18",
       "node18-linux-arm64"
