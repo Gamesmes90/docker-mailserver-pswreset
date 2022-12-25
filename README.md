@@ -31,7 +31,7 @@ nvm use 18
 ```
 run npm
 ```
-npm install
+npm ci
 ```
 Get pkg if you don't have it
 ```
